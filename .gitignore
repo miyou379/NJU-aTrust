@@ -1,0 +1,3 @@
+*.rpm
+aTrustInstaller_amd64.deb
+rpmbuild/
