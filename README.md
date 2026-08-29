@@ -3,9 +3,13 @@
 由 NJU ztna.nju.edu.cn 的 [Ubuntu 客户端](https://ztna.nju.edu.cn/resource/client/linux/ubuntu/amd64/aTrustInstaller_amd64.deb) repackaging
 
 # 构建
-首先拉取 Github repo
+首先下载构建所需依赖
 ```bash
-git clone https://github.com/miyou379/aTrust.git
+sudo dnf install rpm-build redhat-rpm-config rpmautospec
+```
+拉取 Github repo
+```bash
+git clone https://github.com/miyou379/NJU-aTrust.git
 ```
 执行 `build.sh`
 ```bash
