@@ -1,4 +1,4 @@
-# aTrust
+# NJU-aTrust
 南京大学 ztna VPN 客户端 aTrust（深信服）RPM Port  
 由 NJU ztna.nju.edu.cn 的 [Ubuntu 客户端](https://ztna.nju.edu.cn/resource/client/linux/ubuntu/amd64/aTrustInstaller_amd64.deb) repackaging
 
