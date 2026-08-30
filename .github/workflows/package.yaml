@@ -6,7 +6,7 @@ jobs:
   rpm-build:
     runs-on: ubuntu-24.04
     container:
-      image: fedora:lastest
+      image: fedora:latest
     steps:
       - run: dnf install rpm-build redhat-rpm-config rpmautospec
       - run: dnf builddep ./atrust-rpm.spec
