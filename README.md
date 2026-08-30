@@ -1,6 +1,6 @@
 # NJU-aTrust
 南京大学 ztna VPN 客户端 aTrust（深信服）RPM Port  
-由 NJU ztna.nju.edu.cn 的 [Ubuntu 客户端](https://ztna.nju.edu.cn/resource/client/linux/ubuntu/amd64/aTrustInstaller_amd64.deb) repackaging
+对 NJU ztna.nju.edu.cn [Ubuntu 客户端](https://ztna.nju.edu.cn/resource/client/linux/ubuntu/amd64/aTrustInstaller_amd64.deb) 的重新打包
 
 # 构建
 首先下载构建所需依赖
@@ -22,8 +22,8 @@ cd aTrust && ./build.sh
 - Fedora Linux 44 (Xfce)
 
 Release 构建平台：  
-Github Actions with Docker fedora image (fedora:latest)  
-目前为 Fedora 44
+Github Actions with Docker fedora image (`fedora:latest`)  
+目前 `fedora:latest` 为 Fedora 44
 
 在使用过程中遇到任何问题，欢迎开 issue 进行讨论
 
