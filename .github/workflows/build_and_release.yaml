@@ -1,9 +1,10 @@
 on:
   push:
-    branches:
-      - main
     tags:
       - 'v*'
+
+permissions:
+  contents: write
 
 jobs:
   rpm-build:
@@ -28,7 +29,6 @@ jobs:
           mv "$output" "$rename"
       - name: Release
         uses: softprops/action-gh-release@v3
-        if: github.ref_type == 'tag'
         with:
           files: |
             aTrust-*.rpm
