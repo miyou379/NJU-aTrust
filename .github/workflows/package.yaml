@@ -8,8 +8,7 @@ jobs:
     container:
       image: fedora:latest
     steps:
-      - run: pwd
-      - run: ls -ahl
+      - uses: actions/checkout@v4
       - run: dnf install -y rpm-build redhat-rpm-config rpmautospec
       - run: dnf builddep -y ./atrust-rpm.spec
       - run: sh ./build.sh
