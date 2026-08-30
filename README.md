@@ -5,7 +5,7 @@
 # 构建
 首先下载构建所需依赖
 ```bash
-sudo dnf install rpm-build redhat-rpm-config rpmautospec
+sudo dnf wget install rpm-build redhat-rpm-config rpmautospec
 ```
 拉取 Github repo
 ```bash
