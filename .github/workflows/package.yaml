@@ -1,0 +1,15 @@
+on:
+  push:
+    branches: [main]
+
+jobs:
+  rpm-build:
+    runs-on: ubuntu-24.04
+    container:
+      image: fedora:lastest
+    steps:
+      - run: dnf install rpm-build redhat-rpm-config rpmautospec
+      - run: dnf builddep ./atrust-rpm.spec
+      - run: sh ./build.sh
+      - run: ls | grep "aTrust-*"
+    
