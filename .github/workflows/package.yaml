@@ -8,9 +8,23 @@ jobs:
     container:
       image: fedora:latest
     steps:
-      - uses: actions/checkout@v4
-      - run: dnf install -y wget rpm-build redhat-rpm-config rpmautospec
-      - run: dnf builddep -y ./atrust-rpm.spec
-      - run: sh ./build.sh
-      - run: ls | grep "aTrust-*"
-    
+      - name: Fetching Github repository
+        uses: actions/checkout@v4
+      - name: Preparing building dependencies
+        run: |
+          dnf install -y wget rpm-build redhat-rpm-config rpmautospec
+          dnf builddep -y ./atrust.spec
+      - name: Building RPM package
+        run: sh ./build.sh
+      - name: Rename result and post to release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        run: |
+          output=$(find . -type f "aTrust-*.rpm")
+          version=$(rpm -qp --queryformat '%{VERSION}' $output)
+          rename="aTrust-${version}-x86_64.rpm"
+          mv $output $rename
+        with:
+          files: |
+            aTrust-*.rpm
+            LICENSE
