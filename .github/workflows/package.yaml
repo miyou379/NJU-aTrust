@@ -19,9 +19,10 @@ jobs:
       - name: Rename
         run: |
           output=$(find . -type f -name "aTrust-*.rpm")
+          echo "$output"
           version=$(rpm -qp --queryformat '%{VERSION}' $output)
           rename="aTrust-${version}-x86_64.rpm"
-          mv $output $rename
+          mv "$output" "$rename"
       - name: Release
         uses: softprops/action-gh-release@v3
         if: github.ref_type == 'tag'
