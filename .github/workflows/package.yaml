@@ -16,14 +16,15 @@ jobs:
           dnf builddep -y ./atrust.spec
       - name: Building RPM package
         run: sh ./build.sh
-      - name: Rename result and post to release
-        uses: softprops/action-gh-release@v3
-        if: github.ref_type == 'tag'
+      - name: Rename
         run: |
           output=$(find . -type f "aTrust-*.rpm")
           version=$(rpm -qp --queryformat '%{VERSION}' $output)
           rename="aTrust-${version}-x86_64.rpm"
           mv $output $rename
+      - name: Release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
         with:
           files: |
             aTrust-*.rpm
