@@ -22,10 +22,11 @@ cd aTrust && ./build.sh
 - Fedora Linux 44 (Xfce)
 
 Release 构建平台：  
-Fedora Linux 44 (Xfce, amd64)
+Github Actions with Docker fedora image (fedora:latest)  
+目前为 Fedora 44
 
 在使用过程中遇到任何问题，欢迎开 issue 进行讨论
 
 # Todo
-- [ ] 使用 Github Action 自动化构建
+- [x] 使用 Github Actions 自动化构建
 - [ ] 维护 Copr 仓库
