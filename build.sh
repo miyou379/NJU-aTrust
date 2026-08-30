@@ -22,7 +22,7 @@ rpmbuild -bb \
     --define "_topdir $rpmbuild_dir" \
     --define "_tmppath $rpmbuild_dir/tmp" \
     --define "_build_id_links none" \
-    "$root_dir/atrust-rpm.spec"
+    "$root_dir/atrust.spec"
 
 pkg_path=$(find "$rpmbuild_dir/RPMS" -type f -name 'aTrust-*.rpm' -print | sort | tail -n 1)
 if [[ -z "$pkg_path" ]]; then
