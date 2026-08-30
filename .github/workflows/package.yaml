@@ -18,7 +18,7 @@ jobs:
         run: sh ./build.sh
       - name: Rename
         run: |
-          output=$(find . -type f -name "aTrust-*.rpm")
+          output=$(find . -maxdepth 1 -type f -name "aTrust-*.rpm" -print0)
           echo "$output"
           version=$(rpm -qp --queryformat '%{VERSION}' $output)
           rename="aTrust-${version}-x86_64.rpm"
